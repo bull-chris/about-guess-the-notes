@@ -2,10 +2,20 @@ body {
     background-image: url("/images/background.png");
     background-color: #e8e8e8;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: 0px 125px;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #497d79;
+}
+
+p, li {
+    color: #000;
+}
+
+a {
+    color: #497d79;
+    font-weight: bold;
 }
 
 header {
@@ -19,11 +29,44 @@ header img {
     margin: 0 auto;
 }
 
-header h1 {
-    margin: 0;
+main {
+    width: 35%;
+    margin: 1rem 0rem;
+    float: left;
+    margin-left: 15rem;
 }
 
-main {
-    width: 60%;
-    margin: 0 auto;
+#mobileBreak {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        background-image: none;
+    }
+
+    main {
+        width: 80%;
+        float: none;
+        margin-left: 0rem;
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    main {
+        width: 95%;
+    }
+
+    header img {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #mobileBreak {
+        display: unset;
+    }
 }
