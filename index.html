@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Guess the Notes Project - A fun Microbit Experience</title>
+</head>
+<body>
+    <header>
+        <img src="./images/logo.png" alt="Logo for Guess the Notes">
+    </header>
+
+    <main>
+        <section>
+            <h2>Guess the Notes Micro:bit + Chrome Game Demo</h2>
+            <iframe src="" frameborder="0"></iframe>
+        </section>
+        <section>
+            <h2>The Build Process</h2>
+            <p>The project started by working in the Microsoft Makecode interface. We knew we wanted to create
+                a sound based game, so we set off on creating an array of sounds with a method to grab a random
+                one that the user would then have to memorize. After that, we had the Micro:bit play 4 sounds, one which
+                would be the sound the user had to memorize. All in all, the sound portion of the project was wrapped up
+                relatively quick, so we started creating the web interface that would have the controls for connecting the
+                Micro:bit to the browser and starting the game.
+            </p>
+            <p>Next, we realized that we would need a way for the Micro:bit to be able to send and receive data to our
+                webpage. After doing some research, we discovered we could use the serial ports to send data back and forth
+                from the Micro:bit. The resources we used to research serial port usages were <a href="https://web.dev/serial/">https://web.dev/serial/</a> and 
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/getReader">https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/getReader</a>,
+                both which helped us get started with the setup of sending data for our game.
+            </p>
+            <p>
+                We setup a serial port connection through the USB cable on port 115200, which the Micro:bit uses. From here, we sent a message
+                to our Micro:bit to signal the game is starting as the user has hit the play button. In the Makecode interface, we setup a method to
+                check for incoming messages using the comma seperator, and upon receiving the message, it would begin the sound game process outlined earlier.
+                With this working, we had the Micro:bit send back data to our webpage interface which told the game which tune was the correct one that the user needed
+                to choose, so our controller and game interface were officially linked.
+            </p>
+            <p>
+                Going onwards, our goal was to have the Micro:bit handle all game interactions. So we opted to use the compass
+                to rotate the user's arrow cursor towards the option the user wanted to choose, and then the A+B buttons would confirm their
+                choice and move the arrow to their selection. To achieve this, we had to expand our method in the Makecode interface to
+                send over the compass data as well as a confirmation that the A+B buttons had been pressed. We then used the recieved to determine
+                the CSS transform of the user's arrow cursor, as well as a function to check if their selected choice contained the "correct" class.
+            </p>
+
+            <p>
+                To wrap the project up, we finalized the game structure so when correct answers were chosen, the game would start again. On incorrect choices, they would need 
+                to restart the game from the start. Lastly, the design of the site was finalized and the score feature was also implemented to provide users with a goal; to get the highest score they could.
+            </p>
+        </section>
+        <section>
+            <h2>Want to give it a try?</h2>
+            <h3>Here are the instructions to get started:</h3>
+            <ol>
+                <li>Make sure you are using the Chrome Browser, as it is required in order to connect your Micro:bit to the game webpage interface.</li>
+                <li>Head to our <a href="https://bull-chris.github.io/guess-the-notes-game/">GitHub instruction page</a> and follow the "Using as Extension" settings to import the project into Makecode.</li>
+                <li>Once imported into Makecode, download the project. Then, plug in your Micro:bit and place the .hex file onto your Micro:bit.</li>
+                <li>Calibrate your Micro:bit to ensue the .hex file runs properly before starting the game.</li>
+                <li>Navigate to our game interface webpage, found at this link: <a href=""></a></li>
+                <li>Press the "Connect your Micro:bit" button, and choose your Micro:bit device in the connections pop-up.</li>
+                <li>Once connected, hit the "Play" button.</li>
+                <li>You should hear a sound playing out of your Micro:bit. It will repeat 3 times, so listen closely and remember that tune well!</li>
+                <li>The Micro:bit will play 4 random sounds in order. Try to discern which number in the order your sound played!</li>
+                <li>Rotate the Micro:bit to point towards the answer your think is correct.</li>
+                <li>Confirm your answer by hitting the A+B buttons on the Micro:bit together. This will send your cursor to your answer.</li>
+                <li>If you got it right, keep playing! If not, you can try again!</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Our GitHubs for the Project</h2>
+            <p>Click on the links below to view both our Makecode repository and our Game Webpage Interface repository for more insight
+                on how we setup the Guess the Notes project.
+            </p>
+
+            
+            <a href="https://github.com/bull-chris/guess-the-notes-game"><h3>Micro:bit Makecode Github</h3></a>
+        
+            <a href="https://github.com/bull-chris/guess-the-notes-web-interface"><h3>Guess the Notes Game Webpage Interface</h3></a>
+        </section>
+    </main>
+</body>
+</html>
