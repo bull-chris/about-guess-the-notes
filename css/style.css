@@ -5,7 +5,7 @@ body {
     background-color: #e8e8e8;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 0px 125px;
+    background-position: 0px 200px;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #497d79;
@@ -25,6 +25,7 @@ header {
     margin: 0;
     padding: 2rem;
     text-align: center;
+    color: #e8e8e8;
 }
 
 header img {
@@ -52,6 +53,10 @@ iframe {
 @media screen and (max-width: 1024px) {
     body {
         background-image: none;
+    }
+
+    header h1 {
+        font-size: 24px;
     }
 
     main {
