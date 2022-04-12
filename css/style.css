@@ -24,6 +24,7 @@ header {
     background-color: #497d79;
     margin: 0;
     padding: 2rem;
+    text-align: center;
 }
 
 header img {
@@ -36,6 +37,10 @@ main {
     margin: 1rem 0rem;
     float: left;
     margin-left: 15rem;
+}
+
+iframe {
+    width: 100%;
 }
 
 /* hide mobile break to start */
